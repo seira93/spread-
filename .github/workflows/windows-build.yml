@@ -7,6 +7,10 @@ on:
     branches: [ main, master ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+  actions: read
+
 jobs:
   build-windows:
     runs-on: windows-latest
@@ -76,26 +80,32 @@ jobs:
         name: Windows Build v${{ github.run_number }}
         body: |
           ## Windows Build v${{ github.run_number }}
-          
+
           ### 📦 What's included
           - GoogleDriveDownloaderWeb.exe (Windows executable)
           - start_application.bat (Launch script)
-          - client_secret.json (Google API credentials)
+          - client_secret.json (Google API credentials - sample)
           - README files and documentation
-          
+
           ### 🚀 How to use
           1. Download and extract the ZIP file
-          2. Double-click `start_application.bat`
-          3. Open http://localhost:8080 in your browser
-          4. Configure settings and run
-          
+          2. Replace client_secret.json with your actual Google API credentials
+          3. Double-click `start_application.bat`
+          4. Open http://localhost:8080 in your browser
+          5. Configure settings and run
+
           ### 🔧 Requirements
           - Windows 10/11
           - No additional software required (standalone executable)
-          
+
           ### 📋 Build Info
           - Built on: ${{ github.event.head_commit.timestamp }}
           - Commit: ${{ github.sha }}
           - Branch: ${{ github.ref_name }}
+
+          ### ⚠️ Important Notes
+          - The included client_secret.json is a sample file
+          - You must replace it with your actual Google API credentials
+          - See README_WINDOWS.md for setup instructions
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 

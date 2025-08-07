@@ -58,6 +58,24 @@ This project uses GitHub Actions to automatically build Windows executables in a
    - The Windows package will be attached to the release
    - Download directly from the releases page
 
+## 🔧 Repository Setup
+
+### Required GitHub Settings
+
+1. **Enable Actions**
+   - Go to repository Settings → Actions → General
+   - Ensure "Allow all actions and reusable workflows" is selected
+
+2. **Workflow Permissions**
+   - Go to repository Settings → Actions → General
+   - Under "Workflow permissions", select "Read and write permissions"
+   - Check "Allow GitHub Actions to create and approve pull requests"
+
+3. **Branch Protection (Optional)**
+   - Go to repository Settings → Branches
+   - Add rule for main/master branch
+   - Enable "Require status checks to pass before merging"
+
 ## 📁 Build Artifacts
 
 Each build creates:
@@ -65,7 +83,7 @@ Each build creates:
 GoogleDriveDownloaderWeb_Package_Windows/
 ├── GoogleDriveDownloaderWeb.exe    # Windows executable
 ├── start_application.bat           # Launch script
-├── client_secret.json              # Google API credentials
+├── client_secret.json              # Google API credentials (sample)
 ├── README.md                       # Documentation
 ├── README_WINDOWS.md              # Windows-specific guide
 ├── USAGE_GUIDE.md                 # Usage instructions
@@ -136,6 +154,18 @@ pyinstaller --onefile --console --name=GoogleDriveDownloaderWeb \
 3. **Artifact download issues**
    - Check file size limits
    - Verify download permissions
+
+### Release Creation Issues
+
+1. **403 Forbidden Error**
+   - Check repository permissions
+   - Ensure Actions have write access to contents
+   - Verify GITHUB_TOKEN permissions
+
+2. **Release not created**
+   - Check if running on main/master branch
+   - Verify workflow conditions
+   - Check Actions logs for errors
 
 ## 📞 Support
 

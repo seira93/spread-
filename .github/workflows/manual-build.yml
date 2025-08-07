@@ -12,6 +12,10 @@ on:
         - windows
         - windows-debug
 
+permissions:
+  contents: write
+  actions: read
+
 jobs:
   build-windows:
     runs-on: windows-latest
