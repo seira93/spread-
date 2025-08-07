@@ -35,28 +35,19 @@ jobs:
         
     - name: Create Windows package
       run: |
-        if exist "GoogleDriveDownloaderWeb_Package_Windows" (
-          rmdir /s /q "GoogleDriveDownloaderWeb_Package_Windows"
-        )
-        mkdir "GoogleDriveDownloaderWeb_Package_Windows"
-        copy "dist\GoogleDriveDownloaderWeb.exe" "GoogleDriveDownloaderWeb_Package_Windows\"
-        copy "client_secret.json" "GoogleDriveDownloaderWeb_Package_Windows\"
-        copy "依頼.py" "GoogleDriveDownloaderWeb_Package_Windows\"
-        copy "README.md" "GoogleDriveDownloaderWeb_Package_Windows\"
-        copy "USAGE_GUIDE.md" "GoogleDriveDownloaderWeb_Package_Windows\"
-        copy "README_WINDOWS.md" "GoogleDriveDownloaderWeb_Package_Windows\"
-        copy "request.py" "GoogleDriveDownloaderWeb_Package_Windows\"
+        if (Test-Path "GoogleDriveDownloaderWeb_Package_Windows") {
+          Remove-Item -Recurse -Force "GoogleDriveDownloaderWeb_Package_Windows"
+        }
+        New-Item -ItemType Directory -Name "GoogleDriveDownloaderWeb_Package_Windows"
         
-        echo @echo off > "GoogleDriveDownloaderWeb_Package_Windows\start_application.bat"
-        echo echo Google Drive Image Downloader Web Version Starting... >> "GoogleDriveDownloaderWeb_Package_Windows\start_application.bat"
-        echo echo. >> "GoogleDriveDownloaderWeb_Package_Windows\start_application.bat"
-        echo echo Browser will open automatically. If not, manually access http://localhost:8080 >> "GoogleDriveDownloaderWeb_Package_Windows\start_application.bat"
-        echo echo. >> "GoogleDriveDownloaderWeb_Package_Windows\start_application.bat"
-        echo echo To stop the application, close this window. >> "GoogleDriveDownloaderWeb_Package_Windows\start_application.bat"
-        echo echo. >> "GoogleDriveDownloaderWeb_Package_Windows\start_application.bat"
-        echo pause >> "GoogleDriveDownloaderWeb_Package_Windows\start_application.bat"
-        echo GoogleDriveDownloaderWeb.exe >> "GoogleDriveDownloaderWeb_Package_Windows\start_application.bat"
-        echo pause >> "GoogleDriveDownloaderWeb_Package_Windows\start_application.bat"
+        Copy-Item "dist\GoogleDriveDownloaderWeb.exe" "GoogleDriveDownloaderWeb_Package_Windows\"
+        Copy-Item "client_secret.json" "GoogleDriveDownloaderWeb_Package_Windows\"
+        Copy-Item "request.py" "GoogleDriveDownloaderWeb_Package_Windows\"
+        Copy-Item "README.md" "GoogleDriveDownloaderWeb_Package_Windows\"
+        Copy-Item "USAGE_GUIDE.md" "GoogleDriveDownloaderWeb_Package_Windows\"
+        Copy-Item "README_WINDOWS.md" "GoogleDriveDownloaderWeb_Package_Windows\"
+        
+        Set-Content -Path "GoogleDriveDownloaderWeb_Package_Windows\start_application.bat" -Value "@echo off`necho Google Drive Image Downloader Web Version Starting...`necho.`necho Browser will open automatically. If not, manually access http://localhost:8080`necho.`necho To stop the application, close this window.`necho.`npause`nGoogleDriveDownloaderWeb.exe`npause"
         
     - name: Create ZIP artifact
       run: |
