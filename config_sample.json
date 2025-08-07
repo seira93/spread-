@@ -1,0 +1,7 @@
+{
+  "spreadsheet_url": "https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID",
+  "sheet_name": "Sheet1",
+  "start_row": 2,
+  "download_dir": "~/Downloads",
+  "mode": "download"
+} 

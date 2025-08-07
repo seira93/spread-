@@ -16,7 +16,7 @@ echo "📁 Windows用ビルドパッケージを作成中..."
 # 必要なファイルをコピー
 files_to_copy=(
     "simple_gui.py"
-    "依頼.py"
+    "request.py"
     "client_secret.json"
     "build_windows.bat"
     "requirements_windows.txt"
@@ -70,52 +70,5 @@ build_windows.bat
 ## 📋 含まれるファイル
 
 - `simple_gui.py` - メインアプリケーション
-- `依頼.py` - 元のスクリプト
-- `client_secret.json` - Google API認証ファイル
-- `build_windows.bat` - Windows用ビルドスクリプト
-- `requirements_windows.txt` - Windows用依存関係
-- `README_WINDOWS.md` - Windows専用説明書
-- `WINDOWS_SETUP_GUIDE.md` - 詳細セットアップガイド
-
-## 🔧 トラブルシューティング
-
-### Pythonが見つからない場合
-```cmd
-py --version
-```
-
-### 依存関係のインストールエラー
-```cmd
-pip install --upgrade pip
-pip install -r requirements_windows.txt
-```
-
-### ビルドエラー
-- インターネット接続を確認
-- 他のアプリケーションを閉じる
-- 仮想メモリを増やす
-
-## 📞 サポート
-
-問題が発生した場合は、エラーメッセージをコピーして保存してください。
-EOF
-
-echo "✅ Windows用クイックスタートガイドを作成しました"
-
-# ZIPファイルを作成
-echo "📦 ZIPファイルを作成中..."
-zip -r "Windows_Build_Package.zip" "$PACKAGE_DIR"
-
-echo "============================================================"
-echo "🎉 Windows用ビルドパッケージが作成されました！"
-echo "============================================================"
-echo ""
-echo "作成されたファイル:"
-echo "- $PACKAGE_DIR/ (フォルダ)"
-echo "- Windows_Build_Package.zip (ZIPファイル)"
-echo ""
-echo "配布方法:"
-echo "1. $PACKAGE_DIR フォルダをWindowsに転送"
-echo "2. または、Windows_Build_Package.zip を転送"
-echo "3. Windowsで解凍して build_windows.bat を実行"
-echo "============================================================" 
+- `request.py` - 元のスクリプト
+- `

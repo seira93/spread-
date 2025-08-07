@@ -19,7 +19,7 @@
    ```
    spread操作/
    ├── simple_gui.py
-   ├── 依頼.py
+   ├── request.py
    ├── client_secret.json
    ├── build_windows.bat
    ├── requirements_windows.txt
@@ -102,7 +102,7 @@ GoogleDriveDownloaderWeb_Package_Windows/
 ├── README.md                       # 基本説明書
 ├── README_WINDOWS.md              # Windows専用説明書
 ├── USAGE_GUIDE.md                 # 使用方法ガイド
-└── 依頼.py                         # 元のスクリプト
+└── request.py                      # 元のスクリプト
 ```
 
 ## 🎯 使用方法

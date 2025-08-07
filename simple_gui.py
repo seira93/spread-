@@ -815,7 +815,7 @@ class SimpleGUI:
             self.add_log(f"📁 現在のディレクトリ: {os.getcwd()}")
             
             # 必要なファイルの存在確認
-            required_files = ['client_secret.json']
+            required_files = ['request.py', 'client_secret.json']
             for file in required_files:
                 file_path = os.path.join(base_path, file)
                 if os.path.exists(file_path):
@@ -1291,7 +1291,7 @@ def main():
     print(f"📁 作業ディレクトリ: {base_path}")
     
     # 必要なファイルの存在確認
-    required_files = ['依頼.py', 'client_secret.json']
+    required_files = ['request.py', 'client_secret.json']
     missing_files = [f for f in required_files if not os.path.exists(f)]
     
     if missing_files:

@@ -168,7 +168,7 @@ def main():
     print("=" * 60)
     
     # 必要なファイルの存在確認
-    required_files = ['gui_app.py', '依頼.py', 'client_secret.json']
+    required_files = ['gui_app.py', 'request.py', 'client_secret.json']
     missing_files = [f for f in required_files if not os.path.exists(f)]
     
     if missing_files:

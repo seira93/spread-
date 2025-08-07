@@ -58,7 +58,7 @@ if %errorlevel% neq 0 (
 
 echo.
 echo Building Windows application...
-pyinstaller --onefile --console --name=GoogleDriveDownloaderWeb --add-data=README.md:. --add-data=USAGE_GUIDE.md:. --add-data=依頼.py:. --exclude-module=backports --exclude-module=jaraco --exclude-module=pkg_resources --exclude-module=tkinter --exclude-module=matplotlib --exclude-module=numpy simple_gui.py
+pyinstaller --onefile --console --name=GoogleDriveDownloaderWeb --add-data=README.md:. --add-data=USAGE_GUIDE.md:. --add-data=request.py:. --exclude-module=backports --exclude-module=jaraco --exclude-module=pkg_resources --exclude-module=tkinter --exclude-module=matplotlib --exclude-module=numpy simple_gui.py
 
 if %errorlevel% neq 0 (
     echo ERROR: Build failed
@@ -82,6 +82,7 @@ copy "依頼.py" "GoogleDriveDownloaderWeb_Package_Windows\"
 copy "README.md" "GoogleDriveDownloaderWeb_Package_Windows\"
 copy "USAGE_GUIDE.md" "GoogleDriveDownloaderWeb_Package_Windows\"
 copy "README_WINDOWS.md" "GoogleDriveDownloaderWeb_Package_Windows\"
+copy "request.py" "GoogleDriveDownloaderWeb_Package_Windows\"
 
 REM Create Windows batch file
 echo @echo off > "GoogleDriveDownloaderWeb_Package_Windows\start_application.bat"

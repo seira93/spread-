@@ -69,7 +69,7 @@ GoogleDriveDownloaderWeb_Package_Windows/
 ├── README.md                       # Documentation
 ├── README_WINDOWS.md              # Windows-specific guide
 ├── USAGE_GUIDE.md                 # Usage instructions
-└── 依頼.py                         # Original script
+└── request.py                         # Original script
 ```
 
 ## 🔧 Build Configuration
@@ -84,7 +84,7 @@ GoogleDriveDownloaderWeb_Package_Windows/
 pyinstaller --onefile --console --name=GoogleDriveDownloaderWeb \
   --add-data=README.md:. \
   --add-data=USAGE_GUIDE.md:. \
-  --add-data=依頼.py:. \
+  --add-data=request.py:. \
   --exclude-module=backports \
   --exclude-module=jaraco \
   --exclude-module=pkg_resources \

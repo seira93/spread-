@@ -92,22 +92,22 @@ python build.py
 
 #### 基本的な使用方法（デフォルト値）
 ```bash
-python 依頼.py
+python request.py
 ```
 
 #### カスタム設定での実行
 ```bash
 # スプレッドシートURLとシート名を指定
-python 依頼.py --url "https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID" --sheet "シート名"
+python request.py --url "https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID" --sheet "シート名"
 
 # 短縮形でも指定可能
-python 依頼.py -u "https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID" -s "シート名"
+python request.py -u "https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID" -s "シート名"
 
 # 開始行も指定
-python 依頼.py -u "https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID" -s "シート名" -r 3
+python request.py -u "https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID" -s "シート名" -r 3
 
 # ダウンロード先も指定
-python 依頼.py -u "https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID" -s "シート名" -d "/path/to/download"
+python request.py -u "https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID" -s "シート名" -d "/path/to/download"
 ```
 
 #### コマンドライン引数の説明
@@ -119,13 +119,13 @@ python 依頼.py -u "https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID"
 #### 使用例
 ```bash
 # 例1: 別のスプレッドシートを使用
-python 依頼.py -u "https://docs.google.com/spreadsheets/d/abc123def456" -s "商品リスト"
+python request.py -u "https://docs.google.com/spreadsheets/d/abc123def456" -s "商品リスト"
 
 # 例2: 3行目から開始
-python 依頼.py -u "https://docs.google.com/spreadsheets/d/abc123def456" -s "商品リスト" -r 3
+python request.py -u "https://docs.google.com/spreadsheets/d/abc123def456" -s "商品リスト" -r 3
 
 # 例3: ヘルプを表示
-python 依頼.py --help
+python request.py --help
 ```
 
 ### 3. 処理の流れ

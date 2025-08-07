@@ -196,7 +196,7 @@ class GoogleDriveDownloaderGUI:
             
             # コマンドライン引数を構築
             cmd = [
-                sys.executable, "依頼.py",
+                sys.executable, "request.py",
                 "--url", self.url_var.get().strip(),
                 "--sheet", self.sheet_var.get().strip(),
                 "--start-row", str(int(self.start_row_var.get())),

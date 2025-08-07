@@ -31,7 +31,7 @@ jobs:
         
     - name: Build Windows application
       run: |
-        pyinstaller --onefile --console --name=GoogleDriveDownloaderWeb --add-data=README.md:. --add-data=USAGE_GUIDE.md:. --add-data=依頼.py:. --exclude-module=backports --exclude-module=jaraco --exclude-module=pkg_resources --exclude-module=tkinter --exclude-module=matplotlib --exclude-module=numpy simple_gui.py
+        pyinstaller --onefile --console --name=GoogleDriveDownloaderWeb --add-data=README.md:. --add-data=USAGE_GUIDE.md:. --add-data=request.py:. --exclude-module=backports --exclude-module=jaraco --exclude-module=pkg_resources --exclude-module=tkinter --exclude-module=matplotlib --exclude-module=numpy simple_gui.py
         
     - name: Create Windows package
       run: |
@@ -45,6 +45,7 @@ jobs:
         copy "README.md" "GoogleDriveDownloaderWeb_Package_Windows\"
         copy "USAGE_GUIDE.md" "GoogleDriveDownloaderWeb_Package_Windows\"
         copy "README_WINDOWS.md" "GoogleDriveDownloaderWeb_Package_Windows\"
+        copy "request.py" "GoogleDriveDownloaderWeb_Package_Windows\"
         
         echo @echo off > "GoogleDriveDownloaderWeb_Package_Windows\start_application.bat"
         echo echo Google Drive Image Downloader Web Version Starting... >> "GoogleDriveDownloaderWeb_Package_Windows\start_application.bat"

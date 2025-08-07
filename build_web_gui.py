@@ -23,7 +23,7 @@ def build_web_gui():
         '--name=GoogleDriveDownloaderWeb',
         '--add-data=README.md:.',
         '--add-data=USAGE_GUIDE.md:.',
-        '--add-data=依頼.py:.',
+        '--add-data=request.py:.',
         '--exclude-module=backports',
         '--exclude-module=jaraco',
         '--exclude-module=pkg_resources',
@@ -78,7 +78,7 @@ def create_web_gui_package(platform_name):
     files_to_copy = [
         (dist_path, executable_name),
         ('client_secret.json', 'client_secret.json'),
-        ('依頼.py', '依頼.py'),
+        ('request.py', 'request.py'),
         ('README.md', 'README.md'),
         ('USAGE_GUIDE.md', 'USAGE_GUIDE.md'),
         ('config.json', 'config.json')
@@ -199,7 +199,7 @@ def main():
     print("=" * 60)
     
     # 必要なファイルの存在確認
-    required_files = ['simple_gui.py', '依頼.py', 'client_secret.json']
+    required_files = ['simple_gui.py', 'request.py', 'client_secret.json']
     missing_files = [f for f in required_files if not os.path.exists(f)]
     
     if missing_files:

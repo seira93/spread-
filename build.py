@@ -26,7 +26,7 @@ def build_executable():
         '--exclude-module=backports',  # 問題のあるbackportsモジュールを除外
         '--exclude-module=jaraco',  # jaracoモジュールを除外
         '--exclude-module=pkg_resources',  # pkg_resourcesを除外
-        '依頼.py'
+        'request.py'
     ]
     
     # アイコンファイルが存在する場合のみ追加
